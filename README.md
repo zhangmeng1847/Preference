@@ -96,6 +96,23 @@ try {
 }
 ```
 注意：has( )除了上述回调函数方式调用外，也支持通过返回promise对象的方式调用，可自行尝试
+##### 2.4 通过preference实例对象读取指定键名的数据
+使用get( )方法获取数据，在获取数据时需传入要获取键值对的键名称，'default'参数表示设置的默认值，如果根据对应的键名（这里是startup）取不到值，则返回默认值，回调函数中的val即为获取到的值
+
+```ts
+try {
+  preferences.get('startup', 'default', (err, val) => {
+    if (err) {
+      console.error(`Failed to get value of 'startup'. Code:${err.code}, message:${err.message}`);
+      return;
+    }
+    console.info(`Succeeded in getting value of 'startup'. val: ${val}.`);
+  })
+} catch (err) {
+  console.error(`Failed to get value of 'startup'. Code:${err.code}, message:${err.message}`);
+}
+```
+注意：get()除了上述回调函数方式调用外，也支持通过返回promise对象的方式调用，可自行尝试
 ##### 2.5 通过preference实例对象删除指定键名的数据
 使用delete()方法删除指定键值对，示例代码如下所示
 
