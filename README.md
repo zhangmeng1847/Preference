@@ -1,2 +1,2 @@
-# Preference
+# Preferences
 该代码仓库主要实现HarmonyOS中Preferences实现本地持久化的使用场景，通过封装Preferences来实现手机应用中常见的轻量级存储
